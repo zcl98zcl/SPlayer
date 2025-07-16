@@ -1,10 +1,5 @@
 # SPlayer
 
-> [!WARNING]
-> 近期我发现有部分用户在`.env`文件中填入了我的网易云API, 可能会有人不懂, `Vercel`是有**500GB**流量限制的
-> 这种现象导致了我的演示站点一直超出限制导致站点无法访问, 所以呼吁大家不要把我的API填入自己的`配置文件`内
-> 要是还发现有人在肆无忌惮的使用我的`API`, 我将会**封禁你的IP**并且把你的`网易云Cookie`**公开**到当前仓库中
-
 #### 一个简约的音乐播放器
 
 ![main](/screenshots/SPlayer.jpg)
@@ -12,12 +7,6 @@
 ## 说明
 
 > [!IMPORTANT]
->
-> # Q&A
->
-> ### 你为什么要维护这个已经过时的版本
->
-> 那是因为在imsyy的dev分支将会向本地播放器发展, 且把在线版本进入基本维护模式而导致有些功能将不会在网页端生效, 该版本是最后一个支持移动端和网页部署的版本, 我将会尽量把功能与dev分支同步, 以便能使用到与dev分支相同的功能.
 >
 > ### 严肃警告
 >
@@ -36,9 +25,10 @@
 - 欢迎各位大佬 `Star` 😍
 
 ## 👀 Demo
-
-- [SPlayer](https://player.focalors.ltd/)
-  > 该版本为dev分支
+- [SPlayer](https://player.focalors.ltd/)   
+**本项目 CDN 加速及安全防护由 [Tencent EdgeOne](https://edgeone.ai/zh?from=github) 赞助**
+   
+![edgeone](https://edgeone.ai/media/34fe3a45-492d-4ea4-ae5d-ea1087ca7b4b.png)
 
 ## 🎉 功能
 
@@ -76,42 +66,35 @@
 <details>
 <summary>主页面</summary>
 
-![主页面](/screenshots/SPlayer%20-%20主页面.jpg)
+![主页面](/screenshots/SPlayer%20-%20主页面.png)
 
 </details>
 
 <details>
 <summary>播放页面</summary>
 
-![播放页面](/screenshots/SPlayer%20-%20播放页面.jpg)
+![播放页面](/screenshots/SPlayer%20-%20播放页面.png)
 
 </details>
 
 <details>
 <summary>发现页面</summary>
 
-![发现页面](/screenshots/SPlayer%20-%20发现页面.jpg)
+![发现页面](/screenshots/SPlayer%20-%20发现页面.png)
 
 </details>
 
 <details>
 <summary>歌单页面</summary>
 
-![发现页面](/screenshots/SPlayer%20-%20歌单页面.jpg)
+![发现页面](/screenshots/SPlayer%20-%20歌单页面.png)
 
 </details>
 
 <details>
 <summary>评论页面</summary>
 
-![发现页面](/screenshots/SPlayer%20-%20评论页面.jpg)
-
-</details>
-
-<details>
-<summary>本地音乐</summary>
-
-![发现页面](/screenshots/SPlayer%20-%20本地音乐.jpg)
+![发现页面](/screenshots/SPlayer%20-%20评论页面.png)
 
 </details>
 
@@ -130,14 +113,15 @@
 
 ### 🔧 部署相应依赖
 
-1. 本程序依赖 [NeteaseCloudMusicApi](https://github.com/IamFurina/NeteaseCloudMusicApi) 运行以及[UNM-Server](https://act.focalors.ltd/unm-server)，并按照步骤部署, 请确保您已成功部署该项目，并成功取得在线访问地址
+1. 本程序依赖 [NeteaseCloudMusicApi](https://github.com/neteasecloudmusicapireborn/api) 运行以及[UNM-Server](https://act.focalors.ltd/unm-server)，并按照步骤部署, 请确保您已成功部署该项目，并成功取得在线访问地址
 #### 以下是网易云API的部署
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/imsyys-projects/clone?repository-url=https://github.com/IamFurina/NeteaseCloudMusicAPI)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/imsyys-projects/clone?repository-url=https://github.com/neteasecloudmusicapireborn/api)
 #### 以下是UNM-Server的部署
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/imsyys-projects/clone?repository-url=https://github.com/IamFurina/Unm-server)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/imsyys-projects/clone?repository-url=https://github.com/neteasecloudmusicapireborn/Unm)
 #### 以下是TTML歌词API的部署 (可选)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/imsyys-projects/clone?repository-url=https%3A%2F%2Fgithub.com%2FIamFurina%2FLyric-Atlas-API)
 ### 🔧 开始部署本体
+#### 通过Fork仓库部署
 2. 点击本仓库右上角的 `Fork`，复制本仓库到你的 `GitHub` 账号
 3. 复制 `/.env.example` 文件并重命名为 `/.env`
 4. 将 `.env` 文件中的 `RENDERER_VITE_SERVER_URL` 和 `VITE_UNM_API` 改为第一步得到的 API 地址
@@ -180,7 +164,7 @@
 
 6. 将 `Build and Output Settings` 中的 `Output Directory` 改为 `out/renderer`
 
-   ![build](/screenshots/build.jpg)
+   ![build](/screenshots/build.png)
 
 7. 点击 `Deploy`，即可成功部署
 
